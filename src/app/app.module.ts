@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddalbumComponent } from './components/addalbum/addalbum.component';
+import { ShopComponent } from './components/shop/shop.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AddalbumComponent } from './components/addalbum/addalbum.component';
     AppComponent,
     NavComponent,
     HomeComponent,
-    AddalbumComponent
+    AddalbumComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
