@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent  {
   // an array of the customers
-  public customerArray: Customer[] = []
+
   public customer = new Customer(0, '', '', '', '', '','')
   public clientMessage = new ClientMessage('')
 
