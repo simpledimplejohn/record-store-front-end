@@ -7,11 +7,11 @@ import { throwError, catchError } from 'rxjs';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-addUser',
+  templateUrl: './addUser.component.html',
+  styleUrls: ['./addUser.component.css']
 })
-export class LoginComponent  {
+export class AddUserComponent  {
   // an array of the customers
 
   public customer = new Customer(0, '', '', '', '', '','')
