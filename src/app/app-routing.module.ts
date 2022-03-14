@@ -4,14 +4,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ShopComponent } from './components/shop/shop.component';
 import { CartComponent } from './components/cart/cart.component';
-import { AddUserComponent } from './components/addUser/addUser.component';
+import { AddCustomerComponent } from './components/addCustomer/addCustomer.component';
 
 const routes: Routes = [
   {path : "", component: HomeComponent},
   {path : "addalbum", component: AddalbumComponent},
   {path : "shop", component: ShopComponent},
   {path : "cart", component: CartComponent},
-  {path : "addUser", component: AddUserComponent}
+  {path : "addCustomer", component: AddCustomerComponent}
 ];
 
 @NgModule({

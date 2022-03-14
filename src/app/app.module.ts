@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AddalbumComponent } from './components/addalbum/addalbum.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { CartComponent } from './components/cart/cart.component';
-import { AddUserComponent } from './components/addUser/addUser.component';
+import { AddCustomerComponent } from './components/addCustomer/addCustomer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     AddalbumComponent,
     ShopComponent,
     CartComponent,
-    AddUserComponent
+    AddCustomerComponent
 
   ],
   imports: [

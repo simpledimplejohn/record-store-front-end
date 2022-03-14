@@ -9,11 +9,11 @@ import { Cart } from 'src/app/models/cart';
 import { Album } from 'src/app/models/album';
 
 @Component({
-  selector: 'app-addUser',
-  templateUrl: './addUser.component.html',
-  styleUrls: ['./addUser.component.css']
+  selector: 'app-addCustomer',
+  templateUrl: './addCustomer.component.html',
+  styleUrls: ['./addCustomer.component.css']
 })
-export class AddUserComponent  {
+export class AddCustomerComponent  {
   // an array of the customers
 
   public customer = new Customer(0, '', '', '', '', '','', new Cart(0,0))
