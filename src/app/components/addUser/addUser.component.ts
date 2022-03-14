@@ -16,7 +16,7 @@ import { Album } from 'src/app/models/album';
 export class AddUserComponent  {
   // an array of the customers
 
-  public customer = new Customer(0, '', '', '', '', '','', new Cart(0,0,[]))
+  public customer = new Customer(0, '', '', '', '', '','', new Cart(0,0))
   public clientMessage = new ClientMessage('')
 
   constructor(private customerService: CustomerService) { }
