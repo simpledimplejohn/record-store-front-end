@@ -1,3 +1,5 @@
+import { Cart } from "./cart";
+
 export class Customer {
   id: number;
   firstName: string;
@@ -6,6 +8,8 @@ export class Customer {
   password: string;
   email: string;
   address: string;
+  cart: Cart;
+
 
 
   constructor(
@@ -15,9 +19,9 @@ export class Customer {
     userName: string,
     password: string,
     email: string,
-    address: string
-
-  ) {
+    address: string,
+    cart: Cart
+) {
     this.id = id
     this.firstName = firstName
     this.lastName = lastName
@@ -25,6 +29,8 @@ export class Customer {
     this.password = password
     this.email = email
     this.address = address
+    this.cart = cart
   }
+
 
 }

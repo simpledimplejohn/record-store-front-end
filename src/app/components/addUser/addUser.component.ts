@@ -1,10 +1,12 @@
-import { ClientMessage } from './../../models/client-message';
-import { CustomerService } from './../../service/customer.service';
-import { Customer } from './../../models/customer';
+import { ClientMessage } from '../../models/client-message';
+import { CustomerService } from '../../service/customer.service';
+import { Customer } from '../../models/customer';
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { throwError, catchError } from 'rxjs';
 import { NgForm } from '@angular/forms';
+import { Cart } from 'src/app/models/cart';
+import { Album } from 'src/app/models/album';
 
 @Component({
   selector: 'app-addUser',
@@ -14,7 +16,7 @@ import { NgForm } from '@angular/forms';
 export class AddUserComponent  {
   // an array of the customers
 
-  public customer = new Customer(0, '', '', '', '', '','')
+  public customer = new Customer(0, '', '', '', '', '','', new Cart(0,0,[]))
   public clientMessage = new ClientMessage('')
 
   constructor(private customerService: CustomerService) { }
