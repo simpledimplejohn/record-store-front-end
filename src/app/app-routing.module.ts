@@ -1,3 +1,4 @@
+import { AlbumdetailsComponent } from './components/albumdetails/albumdetails.component';
 import { AddalbumComponent } from './components/addalbum/addalbum.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path : "addalbum", component: AddalbumComponent},
   {path : "shop", component: ShopComponent},
   {path : "cart", component: CartComponent},
-  {path : "addCustomer", component: AddCustomerComponent}
+  {path : "addCustomer", component: AddCustomerComponent},
+  {path : "albumdetails", component: AlbumdetailsComponent}
 ];
 
 @NgModule({

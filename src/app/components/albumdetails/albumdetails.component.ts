@@ -1,7 +1,6 @@
 import { AlbumService } from 'src/app/service/album.service';
 import { ClientMessage } from './../../models/client-message';
 import { Track } from './../../models/track';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -22,6 +21,7 @@ export class AlbumdetailsComponent implements OnInit {
   constructor(private albumServ: AlbumService) { }
 
   ngOnInit(): void {
+    this.findAlbumTracks(this.trackId);
 
   }
 
