@@ -1,3 +1,4 @@
+import { Track } from './../models/track';
 import { Observable, throwError, catchError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { localUrl } from 'src/environments/environment';
@@ -19,6 +20,11 @@ export class AlbumService {
 
   findAllAlbums(): Observable<Album[]> {
     return this.http.get<Album[]>(url)
+      .pipe(catchError(this.handleError));
+  }
+
+  findAlbumTracks(id: number): Observable<Track[]> {
+    return this.http.get<Track[]>(`${url}/findAlbumTracks/${id}`)
       .pipe(catchError(this.handleError));
   }
 
