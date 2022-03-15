@@ -11,6 +11,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { AddCustomerComponent } from './components/addCustomer/addCustomer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AlbumdetailsComponent } from './components/albumdetails/albumdetails.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     AddalbumComponent,
     ShopComponent,
     CartComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    AlbumdetailsComponent
 
   ],
   imports: [
