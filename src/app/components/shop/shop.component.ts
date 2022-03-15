@@ -20,6 +20,7 @@ export class ShopComponent implements OnInit {
   constructor(private albumServ: AlbumService) { }
 
   ngOnInit(): void {
+    this.findAllAlbums();
   }
 
   findAllAlbums() {
