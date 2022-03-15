@@ -4,7 +4,9 @@
 </div>
 <div class="mt-4 p-4 bg-light border" rounded>
   <ul *ngFor="let a of albums" class="list-group w-25">
-    <li class="list-group-item">Title: {{a.albumName}}</li>
+    <li class="list-group-item">
+      <a [routerLink]="['/albumdetails', a.id]">Title: {{a.albumName}}</a>
+      </li>
     <li class="list-group-item">Release Date: {{a.releaseDate}}</li>
     <li class="list-group-item">Price: {{a.price | currency}}</li>
     <br/>

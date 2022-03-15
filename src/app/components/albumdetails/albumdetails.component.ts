@@ -1,7 +1,9 @@
+import { Album } from 'src/app/models/album';
 import { AlbumService } from 'src/app/service/album.service';
 import { ClientMessage } from './../../models/client-message';
 import { Track } from './../../models/track';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-albumdetails',
@@ -9,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./albumdetails.component.css']
 })
 export class AlbumdetailsComponent implements OnInit {
+
+  album: Album | undefined;
 
   title = "Track List: ";
   public tracks: Track[] = [];
@@ -18,10 +22,16 @@ export class AlbumdetailsComponent implements OnInit {
     "Album has no tracks"
   );
 
-  constructor(private albumServ: AlbumService) { }
+  constructor(
+      private albumServ: AlbumService,
+      private route: ActivatedRoute
+      ) { }
 
   ngOnInit(): void {
-    this.findAlbumTracks(this.trackId);
+    const routeParams = this.route.snapshot.paramMap;
+    const albumIdFromRoute = Number(routeParams.get('albumId'));
+
+    this.findAlbumTracks(albumIdFromRoute);
 
   }
 

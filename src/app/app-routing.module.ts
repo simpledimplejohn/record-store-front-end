@@ -13,7 +13,7 @@ const routes: Routes = [
   {path : "shop", component: ShopComponent},
   {path : "cart", component: CartComponent},
   {path : "addCustomer", component: AddCustomerComponent},
-  {path : "albumdetails", component: AlbumdetailsComponent}
+  {path : "albumdetails/:albumId", component: AlbumdetailsComponent}
 ];
 
 @NgModule({
