@@ -1,12 +1,12 @@
 <div class="mt-4 p-4 bg-light border" rounded>
   <h1 class="display-8">{{album.albumName}}</h1>
-  <p class="lead">Release Date: {{ album.releaseDate }}</p>
+  <p class="lead">Release Date: <strong>{{ album.releaseDate }}</strong></p>
   <p class="lead">Price: {{ album.price | currency }}</p>
 </div>
 <div class="mt-4 p-4 bg-light border" rounded>
   <p class="lead">{{ title }}</p>
-  <ul *ngFor="let t of tracks" class="list-group w-25">
-    <li class="list-group-item">Track Name: {{t.title}}</li>
+  <ul *ngFor="let t of tracks" class="list-group w-50">
+    <li class="list-group-item">Song: {{t.title}}</li>
     <li class="list-group-item">Duration: {{t.duration}}</li>
     <br/>
 
