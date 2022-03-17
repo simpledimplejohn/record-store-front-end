@@ -4,7 +4,6 @@ import { ClientMessage } from './../../models/client-message';
 import { Track } from './../../models/track';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-albumdetails',
