@@ -12,11 +12,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AlbumdetailsComponent implements OnInit {
 
-  album: Album | undefined;
+  // album: Album | undefined; does this work?
+
+  public album = new Album(0,'','',0);
 
   title = "Track List: ";
   public tracks: Track[] = [];
-  trackId: number = 1;
+
 
   public clientMessage: ClientMessage = new ClientMessage(
     "Album has no tracks"
