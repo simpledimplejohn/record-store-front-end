@@ -20,6 +20,8 @@ export class AlbumdetailsComponent implements OnInit {
   title = "Track List: ";
   public tracks: Track[] = [];
 
+  // tracks = album.trackList;
+
 
   public clientMessage: ClientMessage = new ClientMessage(
     "Album has no tracks"
@@ -33,7 +35,6 @@ export class AlbumdetailsComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const albumIdFromRoute = Number(routeParams.get('albumId'));
-
     this.findAlbumDetails(albumIdFromRoute);
 
   }
@@ -42,6 +43,7 @@ export class AlbumdetailsComponent implements OnInit {
     this.albumServ.findAlbumById(id).subscribe((data) => {
       this.album = data;
       console.log(data);
+      this.tracks = data.trackList;
 
     })
   }

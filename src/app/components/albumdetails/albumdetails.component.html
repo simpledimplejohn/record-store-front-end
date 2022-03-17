@@ -1,6 +1,7 @@
 <div class="mt-4 p-4 bg-light border" rounded>
-  <h1 class="display-8">Album Details</h1>
-
+  <h1 class="display-8">{{album.albumName}}</h1>
+  <p class="lead">Release Date: {{ album.releaseDate }}</p>
+  <p class="lead">Price: {{ album.price | currency }}</p>
 </div>
 <div class="mt-4 p-4 bg-light border" rounded>
   <p class="lead">{{ title }}</p>
