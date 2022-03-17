@@ -4,6 +4,7 @@ import { ClientMessage } from './../../models/client-message';
 import { Track } from './../../models/track';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-albumdetails',
@@ -14,7 +15,7 @@ export class AlbumdetailsComponent implements OnInit {
 
   // album: Album | undefined; does this work?
 
-  public album = new Album(0,'','',0);
+  public album = new Album(0,'','',0, []);
 
   title = "Track List: ";
   public tracks: Track[] = [];
@@ -38,8 +39,10 @@ export class AlbumdetailsComponent implements OnInit {
   }
 
   findAlbumDetails(id: number) {
-    this.albumServ.findAlbumTracks(id).subscribe((data) => {
-      this.tracks = data;
+    this.albumServ.findAlbumById(id).subscribe((data) => {
+      this.album = data;
+      console.log(data);
+
     })
   }
 

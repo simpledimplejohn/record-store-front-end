@@ -4,16 +4,21 @@ export class Album {
   albumName: string
   releaseDate: string
   price: number
+  trackList: []
 
-  constructor (
+
+  constructor(
     id: number,
     albumName: string,
     releaseDate: string,
-    price: number
-  ) {
+    price: number,
+    trackList: []
+) {
     this.id = id
     this.albumName = albumName
     this.releaseDate = releaseDate
     this.price = price
+    this.trackList = trackList
   }
+
 }
