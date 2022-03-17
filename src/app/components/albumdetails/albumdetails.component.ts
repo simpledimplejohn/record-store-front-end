@@ -31,11 +31,11 @@ export class AlbumdetailsComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     const albumIdFromRoute = Number(routeParams.get('albumId'));
 
-    this.findAlbumTracks(albumIdFromRoute);
+    this.findAlbumDetails(albumIdFromRoute);
 
   }
 
-  findAlbumTracks(id: number) {
+  findAlbumDetails(id: number) {
     this.albumServ.findAlbumTracks(id).subscribe((data) => {
       this.tracks = data;
     })

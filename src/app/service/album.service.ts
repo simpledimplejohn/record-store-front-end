@@ -23,10 +23,16 @@ export class AlbumService {
       .pipe(catchError(this.handleError));
   }
 
+  findAlbumById(id: number): Observable<Album> {
+    return this.http.get<Album>(`${url}/${id}`)
+      .pipe(catchError(this.handleError));
+  }
+
   findAlbumTracks(id: number): Observable<Track[]> {
     return this.http.get<Track[]>(`${url}/findAlbumTracks/${id}`)
       .pipe(catchError(this.handleError));
   }
+
 
   private handleError(httpError: HttpErrorResponse) {
 
