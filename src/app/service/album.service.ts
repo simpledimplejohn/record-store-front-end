@@ -33,8 +33,8 @@ export class AlbumService {
       .pipe(catchError(this.handleError));
   }
 
-  addAlbum(album : Album) : Observable<Album>{
-    return this.http.post<Album>(`${url}/add`, album, this.httpOptions)
+  addAlbum(params: any) : Observable<Album>{
+    return this.http.post<Album>(`${url}/add`, params, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 

@@ -33,18 +33,25 @@
       </div>
       <div formArrayName="tracks">
         <h2>Add Tracks</h2>
-        <button type="button" class="btn btn-secondary" (click)="addTracks()">Add Another Track</button>
-        <br/>
-        <div *ngFor="let track of tracks.controls; let i=index">
-          <br/>
+        <button type="button" class="btn btn-secondary" (click)="addTracks()">
+          Add Another Track
+        </button>
+        <br />
+        <div *ngFor="let track of tracks.controls; let i = index">
+          <br />
           <div class="col">
-          <input class="form-control" placeholder="Track Name" id="track-{{ i }}" type="text" [formControlName]="i">
-        </div>
+            <input
+              class="form-control"
+              placeholder="Track Name"
+              id="track-{{ i }}"
+              type="text"
+              [formControlName]="i"
+            />
+          </div>
         </div>
       </div>
-
     </div>
-    <br/>
+    <br />
     <button type="submit" class="btn btn-primary" (click)="addAlbum()">
       Submit
     </button>
@@ -54,8 +61,6 @@
   <div *ngIf="clientMessage.message.length > 0">
     {{ clientMessage.message }}
     <br />
-    <p>stored object albumName is:</p>
-    {{ album.albumName }}
     <p>Form Value: {{ addAlbumForm.value | json }}</p>
   </div>
 </div>

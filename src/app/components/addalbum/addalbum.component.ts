@@ -3,7 +3,7 @@ import { ClientMessage } from './../../models/client-message';
 import { AlbumService } from 'src/app/service/album.service';
 import { Component, OnInit } from '@angular/core';
 import { Album } from 'src/app/models/album';
-import { FormArray, FormBuilder } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-addalbum',
@@ -12,32 +12,38 @@ import { FormArray, FormBuilder } from '@angular/forms';
 })
 export class AddalbumComponent implements OnInit {
 
-  public album = new Album(0,'','',0,[]);
+  // public album = new Album(0,'','',0,[]);
   public clientMessage = new ClientMessage('');
-  public track = new Track(0,'','');
+  // public track = new Track(0,'','');
 
-  addAlbumForm = this.fb.group({
-    albumName: [""],
-    releaseDate: [''],
-    price: [0],
-    tracks: this.fb.array([
-      this.fb.control('')
-    ])
-  })
+  addAlbumForm!: FormGroup;
+
+
 
   constructor(private albumService: AlbumService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.addAlbumForm = this.fb.group({
+      albumName: [""],
+      releaseDate: [''],
+      price: [0],
+      tracks: this.fb.array([
+        this.fb.control('')
+      ])
+    })
   }
 
   public addAlbum() : void {
-    this.albumService.addAlbum(this.album)
+
+
+    this.albumService.addAlbum(this.addAlbumForm.value)
       .subscribe(
         data => this.clientMessage.message = `Successfully added ${data.albumName}`,
         error => this.clientMessage.message = `Error was ${error}`
+
       );
-      console.log(this.album);
   }
+
 
   get tracks() {
     return this.addAlbumForm.get('tracks') as FormArray;
