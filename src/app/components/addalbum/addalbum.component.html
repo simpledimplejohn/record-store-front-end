@@ -31,6 +31,16 @@
           aria-label="price"
         />
       </div>
+      <div formArrayName="tracks">
+        <h2>Add Tracks</h2>
+        <button type="button" class="btn btn-secondary" (click)="addTracks()">Add Another Track</button>
+        <br/>
+        <div *ngFor="let track of tracks.controls; let i=index">
+          <br/>
+          <input class="form-control" placeholder="Track Name" id="track-{{ i }}" type="text" [formControlName]="i">
+
+        </div>
+      </div>
       <button type="submit" class="btn btn-primary" (click)="addAlbum()">
         Submit
       </button>
