@@ -1,4 +1,6 @@
+import { AlbumService } from 'src/app/service/album.service';
 import { Component, OnInit } from '@angular/core';
+import { Album } from 'src/app/models/album';
 
 @Component({
   selector: 'app-addalbum',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddalbumComponent implements OnInit {
 
-  constructor() { }
+  public album = new Album(0,'','',0,[]);
+
+  constructor(private albumService: AlbumService) { }
 
   ngOnInit(): void {
   }
