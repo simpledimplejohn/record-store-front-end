@@ -3,7 +3,7 @@ import { ClientMessage } from './../../models/client-message';
 import { AlbumService } from 'src/app/service/album.service';
 import { Component, OnInit } from '@angular/core';
 import { Album } from 'src/app/models/album';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-addalbum',
@@ -28,7 +28,10 @@ export class AddalbumComponent implements OnInit {
       releaseDate: [''],
       price: [0],
       tracks: this.fb.array([
-        this.fb.control('')
+        this.fb.group({
+          title: [''],
+          duration: ['']
+        })
       ])
     })
   }
@@ -46,7 +49,6 @@ export class AddalbumComponent implements OnInit {
 
       );
   }
-
 
   get tracks() {
     return this.addAlbumForm.get('tracks') as FormArray;
