@@ -37,14 +37,17 @@
         <br/>
         <div *ngFor="let track of tracks.controls; let i=index">
           <br/>
+          <div class="col">
           <input class="form-control" placeholder="Track Name" id="track-{{ i }}" type="text" [formControlName]="i">
-
+        </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary" (click)="addAlbum()">
-        Submit
-      </button>
+
     </div>
+    <br/>
+    <button type="submit" class="btn btn-primary" (click)="addAlbum()">
+      Submit
+    </button>
   </form>
 </div>
 <div class="mt-4 p-4 bg-light border" rounded>
