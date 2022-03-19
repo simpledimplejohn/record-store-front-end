@@ -1,30 +1,49 @@
 <div class="mt-4 p-4 bg-light border" rounded>
   <h2>Add an album to the Record-Store database here</h2>
   <br />
-  <div class="row g-3">
-    <div class="col">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Album Title"
-        aria-label="album-title"
-      />
+  <form>
+    <div class="row g-3">
+      <div class="col">
+        <input
+          [(ngModel)]="album.albumName"
+          name="albumName"
+          type="text"
+          class="form-control"
+          placeholder="Album Title"
+          aria-label="album-title"
+        />
+      </div>
+      <div class="col">
+        <input
+          [(ngModel)]="album.releaseDate"
+          name="releaseDate"
+          type="text"
+          class="form-control"
+          placeholder="Release Date"
+          aria-label="release-date"
+        />
+      </div>
+      <div class="col">
+        <input
+          [(ngModel)]="album.price"
+          name="price"
+          type="number"
+          class="form-control"
+          placeholder="Price"
+          aria-label="price"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="addAlbum()">
+        Submit
+      </button>
     </div>
-    <div class="col">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Release Date"
-        aria-label="release-date"
-      />
-    </div>
-    <div class="col">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Price"
-        aria-label="price"
-      />
-    </div>
+  </form>
+</div>
+<div class="mt-4 p-4 bg-light border" rounded>
+  <div *ngIf="clientMessage.message.length > 0">
+    {{ clientMessage.message }}
+    <br />
+    <p>stored object albumName is:</p>
+    {{ album.albumName }}
   </div>
 </div>

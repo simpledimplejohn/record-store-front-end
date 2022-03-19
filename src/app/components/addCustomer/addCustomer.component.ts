@@ -28,8 +28,8 @@ export class AddCustomerComponent  {
       .subscribe(
         data => this.clientMessage.message = `Sucessfully added ${data.firstName}`,
         error => this.clientMessage.message = `Error was ${error}`
-      )
-    console.log(this.customer)
+      );
+    console.log(this.customer);
 
 
   }
