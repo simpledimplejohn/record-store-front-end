@@ -49,34 +49,24 @@ export class AddalbumComponent  {
   }
 
   onSubmit() {
-    console.log(this.addAlbumForm.value);
+
   }
 
 
-  // public addAlbum() : void {
+  public addAlbum() : void {
+    console.log("form.value: "+this.addAlbumForm.value);
+
+    this.albumService.addAlbum(this.addAlbumForm.value)
+      .subscribe(
+        (data) => {
+          this.clientMessage.message = `Successfully added ${data.albumName}`
+          console.log("submit data: "+data)
+        },
+        error => this.clientMessage.message = `Error was ${error}`
+
+      );
+  }
 
 
-  //   this.albumService.addAlbum(this.addAlbumForm.value)
-  //     .subscribe(
-  //       (data) => {
-  //         this.clientMessage.message = `Successfully added ${data.albumName}`
-  //         console.log(data)
-  //       },
-  //       error => this.clientMessage.message = `Error was ${error}`
-
-  //     );
-  // }
-
-  // get tracks() {
-  //   return this.addAlbumForm.get('tracks') as FormArray;
-  // }
-
-  // getControls() {
-  //   return (this.addAlbumForm.get('controlName') as FormArray).controls;
-  // }
-
-  // addTracks() {
-  //   this.tracks.push(this.fb.control(''));
-  // }
 
 }
