@@ -10,7 +10,7 @@ import { ShopComponent } from './components/shop/shop.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AddCustomerComponent } from './components/addCustomer/addCustomer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlbumdetailsComponent } from './components/albumdetails/albumdetails.component';
 
 
@@ -30,7 +30,8 @@ import { AlbumdetailsComponent } from './components/albumdetails/albumdetails.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

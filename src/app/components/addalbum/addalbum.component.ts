@@ -1,7 +1,9 @@
+import { Track } from './../../models/track';
 import { ClientMessage } from './../../models/client-message';
 import { AlbumService } from 'src/app/service/album.service';
 import { Component, OnInit } from '@angular/core';
 import { Album } from 'src/app/models/album';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-addalbum',
@@ -12,8 +14,15 @@ export class AddalbumComponent implements OnInit {
 
   public album = new Album(0,'','',0,[]);
   public clientMessage = new ClientMessage('');
+  public track = new Track(0,'','');
 
-  constructor(private albumService: AlbumService) { }
+  addAlbumForm = this.fb.group({
+    albumName: [""],
+    releaseDate: [''],
+    price: [0]
+  })
+
+  constructor(private albumService: AlbumService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }

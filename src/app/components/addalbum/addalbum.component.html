@@ -1,13 +1,12 @@
 <div class="mt-4 p-4 bg-light border" rounded>
   <h2>Add an album to the Record-Store database here</h2>
-  <p>Reactive Form works</p>
+  <p>Reactive Form</p>
   <br />
-  <form>
+  <form [formGroup]="addAlbumForm">
     <div class="row g-3">
       <div class="col">
         <input
-          [(ngModel)]="album.albumName"
-          name="albumName"
+          formControlName="albumName"
           type="text"
           class="form-control"
           placeholder="Album Title"
@@ -16,8 +15,7 @@
       </div>
       <div class="col">
         <input
-          [(ngModel)]="album.releaseDate"
-          name="releaseDate"
+          formControlName="releaseDate"
           type="text"
           class="form-control"
           placeholder="Release Date"
@@ -26,8 +24,7 @@
       </div>
       <div class="col">
         <input
-          [(ngModel)]="album.price"
-          name="price"
+          formControlName="price"
           type="number"
           class="form-control"
           placeholder="Price"
@@ -46,5 +43,6 @@
     <br />
     <p>stored object albumName is:</p>
     {{ album.albumName }}
+    <p>Form Value: {{ addAlbumForm.value | json }}</p>
   </div>
 </div>
