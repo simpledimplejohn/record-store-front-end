@@ -25,12 +25,12 @@ export class AddalbumComponent  {
       albumName: [""],
       releaseDate: [''],
       price: [0],
-      tracks: this.fb.array([])
+      trackList: this.fb.array([])
     })
   }
 
-  get tracks() : FormArray {
-    return this.addAlbumForm.get('tracks') as FormArray;
+  get trackList() : FormArray {
+    return this.addAlbumForm.get('trackList') as FormArray;
   }
 
   newTrack(): FormGroup {
@@ -41,11 +41,11 @@ export class AddalbumComponent  {
   }
 
   addTrack() {
-    this.tracks.push(this.newTrack());
+    this.trackList.push(this.newTrack());
   }
 
   removeTrack(i:number) {
-    this.tracks.removeAt(i);
+    this.trackList.removeAt(i);
   }
 
   onSubmit() {
