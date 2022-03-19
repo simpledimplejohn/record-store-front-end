@@ -1,6 +1,5 @@
 <div class="mt-4 p-4 bg-light border" rounded>
   <h2>Add an album to the Record-Store database here</h2>
-  <p>Reactive Form</p>
   <br />
   <form [formGroup]="addAlbumForm" (ngSubmit)="onSubmit()">
     <div class="row g-3">
@@ -27,7 +26,7 @@
           formControlName="price"
           type="number"
           class="form-control"
-          placeholder="Price"
+          placeholder="price"
           aria-label="price"
         />
       </div>
@@ -35,15 +34,23 @@
       <div formArrayName="trackList">
         <h2>Add Tracks</h2>
         <button type="button" class="btn btn-secondary" (click)="addTrack()">
-          Add Another Track
+          Add Track
         </button>
         <br />
         <div *ngFor="let track of trackList.controls; let i = index">
           <br />
-          <div class="col" [formGroupName]="i">
+          <div class="row g-3" [formGroupName]="i">
+            <div class="col">
             <input class="form-control" placeholder="Track Name" type="text" formControlName="title"/>
+          </div>
+          <div class="col">
             <input class="form-control" placeholder="duration" type="text" formControlName="duration"/>
-            <button type="button" class="btn btn-secondayr" (click)="removeTrack(i)">Remove</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-secondary" (click)="removeTrack(i)">Remove</button>
+          </div>
+
+
           </div>
         </div>
       </div>
