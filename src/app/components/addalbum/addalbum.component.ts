@@ -10,52 +10,73 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
   templateUrl: './addalbum.component.html',
   styleUrls: ['./addalbum.component.css']
 })
-export class AddalbumComponent implements OnInit {
+export class AddalbumComponent  {
 
   // public album = new Album(0,'','',0,[]);
   public clientMessage = new ClientMessage('');
   // public track = new Track(0,'','');
 
-  addAlbumForm!: FormGroup;
+  addAlbumForm: FormGroup;
 
 
 
-  constructor(private albumService: AlbumService, private fb: FormBuilder) { }
-
-  ngOnInit(): void {
+  constructor(private albumService: AlbumService, private fb: FormBuilder) {
     this.addAlbumForm = this.fb.group({
       albumName: [""],
       releaseDate: [''],
       price: [0],
-      tracks: this.fb.array([
-        this.fb.group({
-          title: [''],
-          duration: ['']
-        })
-      ])
+      tracks: this.fb.array([])
     })
   }
 
-  public addAlbum() : void {
-
-
-    this.albumService.addAlbum(this.addAlbumForm.value)
-      .subscribe(
-        (data) => {
-          this.clientMessage.message = `Successfully added ${data.albumName}`
-          console.log(data)
-        },
-        error => this.clientMessage.message = `Error was ${error}`
-
-      );
-  }
-
-  get tracks() {
+  get tracks() : FormArray {
     return this.addAlbumForm.get('tracks') as FormArray;
   }
 
-  addTracks() {
-    this.tracks.push(this.fb.control(''));
+  newTrack(): FormGroup {
+    return this.fb.group({
+      title: '',
+      duration: ''
+    })
   }
+
+  addTrack() {
+    this.tracks.push(this.newTrack());
+  }
+
+  removeTrack(i:number) {
+    this.tracks.removeAt(i);
+  }
+
+  onSubmit() {
+    console.log(this.addAlbumForm.value);
+  }
+
+
+  // public addAlbum() : void {
+
+
+  //   this.albumService.addAlbum(this.addAlbumForm.value)
+  //     .subscribe(
+  //       (data) => {
+  //         this.clientMessage.message = `Successfully added ${data.albumName}`
+  //         console.log(data)
+  //       },
+  //       error => this.clientMessage.message = `Error was ${error}`
+
+  //     );
+  // }
+
+  // get tracks() {
+  //   return this.addAlbumForm.get('tracks') as FormArray;
+  // }
+
+  // getControls() {
+  //   return (this.addAlbumForm.get('controlName') as FormArray).controls;
+  // }
+
+  // addTracks() {
+  //   this.tracks.push(this.fb.control(''));
+  // }
 
 }
