@@ -38,7 +38,10 @@ export class AddalbumComponent implements OnInit {
 
     this.albumService.addAlbum(this.addAlbumForm.value)
       .subscribe(
-        data => this.clientMessage.message = `Successfully added ${data.albumName}`,
+        (data) => {
+          this.clientMessage.message = `Successfully added ${data.albumName}`
+          console.log(data)
+        },
         error => this.clientMessage.message = `Error was ${error}`
 
       );
