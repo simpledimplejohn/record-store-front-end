@@ -1,11 +1,11 @@
 import { Track } from './../models/track';
 import { Observable, throwError, catchError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { localUrl } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import { Album } from '../models/album';
+import { GlobalConstants } from '../components/global-constants';
 
-const url = `${localUrl}album`
+const url = `${GlobalConstants.apiUrl}album`
 
 @Injectable({
   providedIn: 'root'

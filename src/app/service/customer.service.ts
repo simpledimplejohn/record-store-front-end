@@ -3,10 +3,10 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Customer } from '../models/customer';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs';
-import { localUrl } from 'src/environments/environment';
+import { GlobalConstants } from '../components/global-constants';
 
 // the url of the api
-const url = `${localUrl}customers`;
+const url = `${GlobalConstants.apiUrl}customers`;
 
 @Injectable({
   providedIn: 'root'
