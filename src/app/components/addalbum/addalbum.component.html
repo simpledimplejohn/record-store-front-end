@@ -30,7 +30,7 @@
           aria-label="price"
         />
       </div>
-<!-- for array -->
+      <!-- for array -->
       <div formArrayName="trackList">
         <h2>Add Tracks</h2>
         <button type="button" class="btn btn-secondary" (click)="addTrack()">
@@ -41,16 +41,30 @@
           <br />
           <div class="row g-3" [formGroupName]="i">
             <div class="col">
-            <input class="form-control" placeholder="Track Name" type="text" formControlName="title"/>
-          </div>
-          <div class="col">
-            <input class="form-control" placeholder="duration" type="text" formControlName="duration"/>
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-secondary" (click)="removeTrack(i)">Remove</button>
-          </div>
-
-
+              <input
+                class="form-control"
+                placeholder="Track Name"
+                type="text"
+                formControlName="title"
+              />
+            </div>
+            <div class="col">
+              <input
+                class="form-control"
+                placeholder="duration"
+                type="text"
+                formControlName="duration"
+              />
+            </div>
+            <div class="col">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="removeTrack(i)"
+              >
+                Remove
+              </button>
+            </div>
           </div>
         </div>
       </div>

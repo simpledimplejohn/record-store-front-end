@@ -14,7 +14,7 @@ export class AddalbumComponent  {
 
   // public album = new Album(0,'','',0,[]);
   public clientMessage = new ClientMessage('');
-  // public track = new Track(0,'','');
+  public track!: Track
 
   addAlbumForm: FormGroup;
 
