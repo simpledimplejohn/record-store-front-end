@@ -1,10 +1,10 @@
 import { Observable, throwError } from 'rxjs';
-import { localUrl } from 'src/environments/environment';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Track } from '../models/track';
+import { GlobalConstants } from '../components/global-constants';
 
-const url = `${localUrl}track`
+const url = `${GlobalConstants.apiUrl}track`
 
 @Injectable({
   providedIn: 'root'
